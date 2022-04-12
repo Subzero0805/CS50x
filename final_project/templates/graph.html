@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class = "row row-cols-1 row-cols-md-2 g-4">
+    <div class="col-xs-10 col-sm-6 col-md-6">
+        <div class="card card-style mb-2">
+            <div class="card-body">
+                <div class="chart-container" style="position: relative;">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-10 col-sm-6 col-md-6">
+        <div class="card card-style mb-2">
+            <div class="card-body">
+                <div class="chart-container" style="position: relative;">
+                    <canvas id="lineChart2"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const labels = {{labels1 | safe}};
+    const data = { labels: labels,
+        datasets: [{
+            label: "Price",
+            backgroundColor: 'rgb(0, 100, 255)',
+            borderColor: 'rgb(0, 100, 255)',
+            data: {{values1 | safe}},
+        }]
+        };
+    const config ={
+        type: 'line',
+        data: data,
+        options: {responsive: true,
+            radius: 0,
+            plugins:{
+                title : {
+                    display: true,
+                    text: "1 Year {{chosen_stock1}} Price"
+                }
+            }
+        }
+    };
+    const labels2 = {{labels2 | safe}};
+    const data2 = { labels: labels2,
+        datasets: [{
+            label: "Price",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: {{values2 | safe}},
+        }]
+        };
+    const config2 ={
+        type: 'line',
+        data: data2,
+        options: {responsive: true,
+            radius: 0,
+            plugins:{
+                title : {
+                    display: true,
+                    text: "1 Year {{chosen_stock2}} Price"
+                }
+            }
+        }
+    };
+</script>
+<script>
+    const myChart = new Chart(
+        document.getElementById("lineChart"),
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById("lineChart2"),
+        config2
+    );
+</script>
+
+
+{% endblock %}
