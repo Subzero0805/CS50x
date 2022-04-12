@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Symbol</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">Transacted</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- TODO: Loop through the database entries to display them in this table -->
+        {% for i in range(num_of_stocks) %}
+            <tr>
+                <td class="text-start">{{ symbols[i] }}</td>
+                <td class="text-end">{{ shares[i] }}</td>
+                <td class="text-end">{{ prices[i] }}</td>
+                <td class="text-end">{{ transaction_ids[i] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+{% endblock %}

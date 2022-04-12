@@ -1,0 +1,32 @@
+.header{
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 5px 10px 5px grey;
+}
+
+.secondaryHeader{
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.subHeader{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    background-color: #eee;
+    border-color: #fff;
+    opacity: 0.5;
+}
+
+.section{
+    padding: 0.5rem 2rem 1rem 2rem;
+}
+
+.extraSection{
+    padding: 0.5rem 2rem 1rem 2rem;
+    box-shadow: 10px 10px 10px grey;
+}

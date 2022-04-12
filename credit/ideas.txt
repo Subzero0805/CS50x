@@ -1,0 +1,11 @@
+ask the user for their card number:
+    do
+    {
+        number = "What's your card num?"
+    }
+    implment some check for valid card
+    while(number )
+
+valid card function:
+for i=0 in number, i < 2:
+    if 

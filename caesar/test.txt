@@ -1,0 +1,28 @@
+plain text = abc
+ciphertext = bcd
+key = 1
+shifting text by 1
+
+letters range from 1 - 26 ( 0- 25)
+
+key <= 1
+    if key is < 26
+    shift by the remainder
+    k = key % 26
+    key = k
+
+shifting letters:
+    for letter in word:
+        if letter is a character:
+        //need to add check for captial and lower
+            if letter + key > 26:
+                // z (26) + 1 = 27
+                // (z (26) + 1) - 26 = 1
+                newletter = letter + key - 26
+                ecryptword[letter] = newletter
+            else:
+                newletter = letter + key
+                ecryptword[letter] = newletter
+        else:
+            //keep spaces, punctuation the same
+            do nothing
