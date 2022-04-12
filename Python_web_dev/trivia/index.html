@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            var correctButton = document.createElement('button');
+            correctButton.id = "Correct";
+            correctButton.innerHTML = 'London';
+            click
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    What is the name of England's Captial City?
+                </h3>
+                <hr>
+                <div id="Cor_message" style = 'display: none' > Correct! </div>
+                <div id="Wrong_message" style = 'display: none' > Incorrect! </div>
+                <ul>
+                    <div>
+                        <button id="Correct"> London </button>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="Wrong1"> Rome </button>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="Wrong2"> Paris </button>
+                    </div>
+
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                What is Spain's captial city?
+                </h3>
+                <hr>
+                <div id="2Cor_message" style = 'display: none' > Correct! </div>
+                <div id="2Wrong_message" style = 'display: none' > Incorrect! </div>
+                </hr>
+                <div>
+                    <input [type = "text"] id = "user">
+                    <button id = "submission"> submit </button>
+                </div>
+            </div>
+            <script>
+                var sub = document.getElementById('submission');
+                sub.onclick = function(){
+                        var subText = document.getElementById('user').value;
+                        var corText = document.getElementById('2Cor_message');
+                        var wrongText = document.getElementById('2Wrong_message');
+                        if (subText === "madrid"){
+                            document.getElementById('user').style.color = "green";
+                            if (corText.style.display === 'none'){
+                                corText.style.display = 'block';
+                            } else{
+                                corText.style.display = 'none';
+                            }
+                        } else {
+                            document.getElementById('user').style.color = "red";
+                            if (wrongText.style.display === 'none'){
+                                wrongText.style.display = 'block';
+                            } else {
+                                wrongText.style.display = 'none'
+                            }
+                        }
+                };
+                var btn = document.getElementById('Correct');
+                btn.onclick = function(){
+                        btn.style.backgroundColor = 'green';
+                        var text = document.getElementById('Cor_message');
+                        if (text.style.display === 'none'){
+                            text.style.display = 'block';
+                        } else {
+                            text.style.display = 'none';
+                        }
+                };
+                var btn1 = document.getElementById('Wrong1');
+                btn1.onclick = function(){
+                        btn1.style.backgroundColor = 'red';
+                        var text = document.getElementById('Wrong_message');
+                        if (text.style.display === 'none'){
+                            text.style.display = 'block';
+                        } else {
+                            text.style.display = 'none';
+                        }
+                };
+                var btn2 = document.getElementById('Wrong2');
+                btn2.onclick = function(){
+                        btn2.style.backgroundColor = 'red';
+                        var text = document.getElementById('Wrong_message');
+                        if (text.style.display === 'none'){
+                            text.style.display = 'block';
+                        } else {
+                            text.style.display = 'none';
+                        }
+                };
+        </script>
+        </div>
+    </body>
+</html>
