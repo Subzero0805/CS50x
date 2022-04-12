@@ -1,0 +1,15 @@
+ASCII value a - z:
+    range = 97 - 122
+
+Hi!
+
+points = list[]
+compute_score:
+    get "word"
+    int score;
+    convert word to all lower case
+    loop through "word"
+    for each letter between range:
+        val = (letter - 97)
+        if val <= 0 and val >=25:
+            score += points[val]
