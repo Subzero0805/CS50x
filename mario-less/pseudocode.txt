@@ -1,8 +1,0 @@
-do
-    ask user for height
-while height < 1 && height > 8
-for columns < height
-    for row
-        print # column times in a row
-    new line
-
